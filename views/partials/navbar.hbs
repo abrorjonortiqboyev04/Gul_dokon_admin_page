@@ -1,0 +1,20 @@
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                {{#if isAuth}}
+                    <a class="nav-link" href=" /admin/dashboard"> Dashboard</a>
+                    <a class="nav-link" href="/admin/order">Orders</a>
+                    <a class="nav-link" href="/admin/add">New product</a>
+                    <a class="nav-link" href="/auth/logout">Logout</a>
+                  {{else}}
+                    <a class="nav-link" href="/auth/registration">Registration</a>
+                    <a class="nav-link" href="/auth/login">Login</a>
+                    <a class="nav-link " href="/user/all">Buyurma yuborish uchun</a>
+                {{/if}}
+                </div>
+            </div>
+        </div>
+    </nav>
+     

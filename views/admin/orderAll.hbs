@@ -1,0 +1,44 @@
+{{#if data}}
+     {{#each data}}  
+        <div class="card mb-5 mx-5 my-5" style="width: 600px;">
+            <img src="{{product.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.title}}</h5><hr>
+                    <h6>Description: </h6>
+                    <p class="card-text">{{product.description}}</p><hr>
+                    <p class="card-text">Soni: {{product.mount}} ta</p>
+                    <p class="card-text">Narxi: {{product.price}} so'm</p>
+                    <p class="card-text"><small class="text-muted">{{product.createdAt}}</small></p>
+                </div>
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                            <img src="https://img.freepik.com/premium-vector/bearded-man-avatar-man-vector-portrait_9385-36.jpg" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{FISH}}</h5>
+                                <p class="card-text">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-fill" viewBox="0 0 16 16">
+                                           <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.3 1.3 0 0 0-.37.265.3.3 0 0 0-.057.09V14l.002.008.016.033a.6.6 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.6.6 0 0 0 .146-.15l.015-.033L12 14v-.004a.3.3 0 0 0-.057-.09 1.3 1.3 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465s-2.462-.172-3.34-.465c-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411"/>
+                                     </svg>
+                                    Address: {{address}}</p>
+                                <p class="card-text">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                                         <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                                    </svg>
+                                    Phone: {{phone}}</p>
+                                <p class="card-text"><small class="text-muted">{{createdAt}}</small></p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+            <div class="card-footer">
+                <a href="/admin/sotildi/{{id}}" type="button" class="btn btn-primary">Sotildi</a>
+                <a href="/admin/sotilmadi/{{id}}" type="button" class="btn btn-danger">Sotilmadi</a>
+            </div>
+        </div>
+     {{/each}}
+    {{else}}
+     <h1 style="text-align: center;">Hali buyurtma berilmadi😒😒</h1>
+   {{/if}}

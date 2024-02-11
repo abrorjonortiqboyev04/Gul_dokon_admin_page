@@ -1,0 +1,43 @@
+       <div class="card mb-5 mx-5 my-5" style="width: 600px;">
+            <img src="{{data.image}}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{data.title}}</h5><hr>
+            <h6>Description: </h6>
+            <p class="card-text">{{data.description}}</p><hr>
+            <p class="card-text">Soni: {{data.mount}} ta</p>
+            <p class="card-text">Narxi: {{data.price}} so'm</p>
+            <p class="card-text"><small class="text-muted">{{data.createdAt}}</small></p>
+            </div>
+        </div>    
+     
+     
+     <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-6 offset-3">
+            <form action="/user/order/{{data.id}}" method="post">
+             {{#if error}}
+             <div class="alert alert-danger" role="alert">
+               {{error}}
+             </div>
+            {{/if}}
+              <div class="mb-3">
+                <label for="text" class="form-label">F.I.SH</label>
+                <input type="text" class="form-control" name="FISH" id="email">
+              </div>
+
+              <div class="mb-3">
+                <label for="text" class="form-label">Address</label>
+                <input type="text" class="form-control" name="address" id="password">
+              </div>
+
+              <div class="mb-3">
+                <label for="text" class="form-label">Phone</label>
+                <input type="text" class="form-control" name="phone" id="password">
+              </div>
+              <input type="hidden" name="_csrf" value="{{csrfToken}}">
+              <button type="submit" class="btn btn-primary">Order</button>
+              <br><br>
+            </form>
+          </div>
+        </div>
+      </div>

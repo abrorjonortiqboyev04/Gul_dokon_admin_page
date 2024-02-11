@@ -1,0 +1,39 @@
+       <div class="card mb-5 mx-5 my-5" style="width: 600px;">
+            <img src="{{data.image}}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{data.title}}</h5><hr>
+            <h6>Description: </h6>
+            <p class="card-text">{{data.description}}</p><hr>
+            <p class="card-text">Soni: {{data.mount}} ta</p>
+            <p class="card-text">Narxi: {{data.price}} so'm</p>
+            <p class="card-text"><small class="text-muted">{{data.createdAt}}</small></p>
+            </div>
+        </div>
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-3">
+        <div class="card mt-3">
+          <div class="card-body">
+             {{#if error}}
+             <div class="alert alert-danger" role="alert">
+               {{error}}
+             </div>
+            {{/if}}
+            <form action="/user/add/{{data.id}}" method="post">
+                
+             <div class="mb-3">
+                <label for="email" class="form-label">Email: </label>
+                <input type="email" class="form-control" name="email" id="password">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Comment:  </label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="comment" rows="4"></textarea>
+              </div>
+               <input type="hidden" name="_csrf" value="{{csrfToken}}">
+              <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>

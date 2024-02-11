@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-3">
+        <div class="card mt-3">
+          <div class="card-body">
+             {{#if error}}
+             <div class="alert alert-danger" role="alert">
+               {{error}}
+             </div>
+            {{/if}}
+            <form action="/admin/new" method="post" enctype="multipart/form-data">
+                
+             <div class="mb-3">
+                <label for="text" class="form-label">Title</label>
+                <input type="text" class="form-control" name="title" id="password" value="{{oldTxt.title}}">
+              </div>
+
+              <div class="mb-3">
+                <label for="file" class="form-label">Product Image</label>
+                <input class="form-control" type="file" name="image" id="formFile" value="{{oldTxt.image}}">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Description </label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="4">{{oldTxt.description}}</textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="number" class="form-label">Amount</label>
+                <input type="number" class="form-control" name="mount" id="password" value="{{oldTxt.mount}}">
+              </div>
+
+              <div class="mb-3">
+                <label for="number" class="form-label">Price (so'm)</label>
+                <input type="number" class="form-control" name="price" id="password" value="price">
+              </div>
+               <input type="hidden" name="_csrf" value="{{csrfToken}}">
+              <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>

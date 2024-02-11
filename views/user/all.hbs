@@ -1,0 +1,21 @@
+{{#if data}}
+     {{#each data}}  
+        <div class="card mb-5 mx-5 my-5" style="width: 600px;">
+            <img src="{{image}}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{title}}</h5><hr>
+            <h6>Description: </h6>
+            <p class="card-text">{{description}}</p><hr>
+            <p class="card-text">Soni: {{mount}} ta</p>
+            <p class="card-text">Narxi: {{price}} so'm</p>
+            <p class="card-text"><small class="text-muted">{{createdAt}}</small></p>
+            </div>
+            <div class="card-footer">
+                <a href="/user/open/{{id}}" type="button" class="btn btn-danger">Order</a>
+                <a href="/user/comment/{{id}}" type="button" class="btn btn-danger">Comment</a>
+            </div>
+        </div>
+     {{/each}}
+    {{else}}
+     <h1>Hali mahsulot kiritilmadi!!!</h1>
+   {{/if}}
